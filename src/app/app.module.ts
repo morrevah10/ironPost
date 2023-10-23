@@ -9,11 +9,13 @@ import { AppComponent } from './app.component';
 
 import { TwitterService } from '../../src/app/services/twitter.service';
 import { TwitterConnectButtonComponent } from './cmps/twitter-connect-button/twitter-connect-button.component';
+import { TwitterCallbackComponent } from './cmps/twitter-callback/twitter-callback.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TwitterConnectButtonComponent
+    TwitterConnectButtonComponent,
+    TwitterCallbackComponent
   ],
   imports: [
     BrowserModule,

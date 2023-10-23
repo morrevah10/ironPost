@@ -1,2 +1,10 @@
 <p>twitter-connect-button works!</p>
 <button (click)="connectWithTwitter()">Connect via Twitter</button>
+
+<section class="ans">
+    <div *ngIf="!isLoading">oauthVerifier: {{ oauth_verifier }}</div>
+
+
+    <button (click)="Twitter()">Twitter_Token</button>
+
+</section>
