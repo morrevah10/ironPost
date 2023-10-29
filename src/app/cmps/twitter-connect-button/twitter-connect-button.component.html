@@ -1,10 +1,13 @@
 <p>twitter-connect-button works!</p>
 <button (click)="connectWithTwitter()">Connect via Twitter</button>
 
-<section class="ans">
-    <div *ngIf="!isLoading">oauthVerifier: {{ oauth_verifier }}</div>
+<button (click)="userInfo()">user info</button>
+
+<button (click)="like()">like a twitte</button>
 
 
-    <button (click)="Twitter()">Twitter_Token</button>
+<button (click)="post()">twitte</button>
 
-</section>
+
+<label for="tweetContent">Tweet Content:</label>
+<textarea id="tweetContent" [(ngModel)]="tweetContent"></textarea>

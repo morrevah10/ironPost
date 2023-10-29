@@ -45,6 +45,38 @@ export class TwitterService {
     };
 
     const url = this.APIurl + 'get_access_token/';
-    return this.http.get<any[]>(url, { params: queryParams });
+    return this.http.get<any>(url, { params: queryParams });
+  }
+
+  getUserData(access_token_key:string,access_token_secret:string){
+    console.log('inside user data')
+    let queryParams = {
+      access_token_key: access_token_key,
+      access_token_secret: access_token_secret,
+    };
+    console.log('queryParams',queryParams)
+
+    const url = this.APIurl + 'twitter_get_user_data/';
+    return this.http.get<any>(url, { params: queryParams });
+  }
+
+  likeTwitte(access_token_key:string,access_token_secret:string,text:string){
+    console.log('inside user data')
+    let queryParams = {
+      access_token_key: access_token_key,
+      access_token_secret: access_token_secret,
+      text:text
+    };
+    console.log('queryParams',queryParams)
+
+    const url = this.APIurl + 'like_tweet/';
+    return this.http.get<any>(url, { params: queryParams });
+  }
+
+
+  post(){
+    console.log('inside')
+    const url = this.APIurl + 'like_tweet/';
+      return this.http.get<any>(url);
   }
 }
