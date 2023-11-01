@@ -210,6 +210,10 @@ export class TwitterConnectButtonComponent implements OnInit {
     } else {
       console.log('Some variables are missing, cannot proceed yet');
     }
+
+
+
+    this.twitterService.setKeys(resource_owner_key!,resource_owner_secret!,this.access_token,this.access_secret)
   }
 
   // userInfo() {
