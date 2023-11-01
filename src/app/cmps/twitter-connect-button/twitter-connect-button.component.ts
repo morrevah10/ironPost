@@ -179,6 +179,7 @@ export class TwitterConnectButtonComponent implements OnInit {
   }
 
   Twitter(): void {
+    console.log('inside twitter func')
     const resource_owner_key = sessionStorage.getItem('resource_owner_key');
     const resource_owner_secret = sessionStorage.getItem(
       'resource_owner_secret'
@@ -211,59 +212,59 @@ export class TwitterConnectButtonComponent implements OnInit {
     }
   }
 
-  userInfo() {
-    const access_token_key = sessionStorage.getItem('access_token_key');
-    const access_token_secret = sessionStorage.getItem('access_token_secret');
+  // userInfo() {
+  //   const access_token_key = sessionStorage.getItem('access_token_key');
+  //   const access_token_secret = sessionStorage.getItem('access_token_secret');
 
-    console.log('access_token_key',access_token_key)
-    console.log('access_token_secret',access_token_secret)
+  //   console.log('access_token_key',access_token_key)
+  //   console.log('access_token_secret',access_token_secret)
 
     
-      this.twitterService.getUserData(access_token_key!, access_token_secret!).subscribe(
-        (response) => {
-          console.log('Response from getAccess:', response);
-          this.userId = response.id_str
-          console.log('this.userId',this.userId)
-          sessionStorage.setItem('user_id',  this.userId);
+  //     this.twitterService.getUserData(access_token_key!, access_token_secret!).subscribe(
+  //       (response) => {
+  //         console.log('Response from getAccess:', response);
+  //         this.userId = response.id_str
+  //         console.log('this.userId',this.userId)
+  //         sessionStorage.setItem('user_id',  this.userId);
           
           
-        },
-        (error) => {
-          console.log('Error from getAccess:', error);
-        }
-      );;
-  }
+  //       },
+  //       (error) => {
+  //         console.log('Error from getAccess:', error);
+  //       }
+  //     );;
+  // }
 
 
-  like(){
-    console.log(this.tweetContent)
+  // like(){
+  //   console.log(this.tweetContent)
 
-    const access_token_key = sessionStorage.getItem('access_token_key');
-    const access_token_secret = sessionStorage.getItem('access_token_secret');
-    const user_id = sessionStorage.getItem('user_id')
-    console.log('access_token_key',access_token_key)
-    console.log('access_token_secret',access_token_secret)  
+  //   const access_token_key = sessionStorage.getItem('access_token_key');
+  //   const access_token_secret = sessionStorage.getItem('access_token_secret');
+  //   const user_id = sessionStorage.getItem('user_id')
+  //   console.log('access_token_key',access_token_key)
+  //   console.log('access_token_secret',access_token_secret)  
     
-    this.twitterService.likeTwitte(access_token_key!,access_token_secret!,this.tweetContent).subscribe(
-      (response) => {
-        console.log('Response from getAccess:', response);
-      },
-      (error) => {
-        console.log('Error from getAccess:', error);
-      }
-    );;
-  }
+  //   this.twitterService.likeTwitte(access_token_key!,access_token_secret!,this.tweetContent).subscribe(
+  //     (response) => {
+  //       console.log('Response from getAccess:', response);
+  //     },
+  //     (error) => {
+  //       console.log('Error from getAccess:', error);
+  //     }
+  //   );;
+  // }
 
-  post(){
-    this.twitterService.post().subscribe(
-           (response) => {
-        console.log('Response from getAccess:', response);
-      },
-      (error) => {
-        console.log('Error from getAccess:', error);
-      } 
-    )
-  }
+  // post(){
+  //   this.twitterService.post().subscribe(
+  //          (response) => {
+  //       console.log('Response from getAccess:', response);
+  //     },
+  //     (error) => {
+  //       console.log('Error from getAccess:', error);
+  //     } 
+  //   )
+  // }
 
 
 }
